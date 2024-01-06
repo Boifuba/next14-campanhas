@@ -3,18 +3,38 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
+    "dev": "node --no-deprecation ./node_modules/.bin/next dev",
+    "build": "node --max-old-space-size=4096 --no-deprecation  ./node_modules/.bin/next build",
     "start": "next start",
     "lint": "next lint"
   },
   "dependencies": {
+    "@firebase/auth": "^1.5.1",
+    "@firebase/firestore": "^4.4.0",
+    "@tinymce/tinymce-react": "^4.3.2",
+    "bcryptjs": "^2.4.3",
+    "cookie": "^0.6.0",
+    "date-fns": "^3.0.6",
+    "dotenv": "^16.3.1",
+    "firebase": "^10.7.1",
+    "firebase-admin": "^12.0.0",
+    "html-react-parser": "^5.0.11",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.0.3",
+    "next": "14.0.4",
+    "next-auth": "^5.0.0-beta.4",
     "react": "^18",
     "react-dom": "^18",
-    "next": "14.0.4"
+    "react-google-login": "^5.2.2",
+    "react-html-parser": "^2.0.2",
+    "react-icons": "^4.12.0",
+    "react-share": "^5.0.3",
+    "sharp": "^0.33.1",
+    "sitemap": "^7.1.1"
   },
   "devDependencies": {
     "eslint": "^8",
-    "eslint-config-next": "14.0.4"
+    "eslint-config-next": "14.0.4",
+    "webpack-bundle-analyzer": "^4.10.1"
   }
 }

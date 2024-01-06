@@ -1,0 +1,55 @@
+.container {
+    margin: 60px;
+    min-height: 600px;
+}
+
+.big {
+    font-size: 100px;
+    font-weight: bold;
+    color: #222;
+    text-align: center;
+}
+
+.sefudeu {
+    font-size: 90px;
+    font-weight: bold;
+    color: darkorange;
+    text-align: center;
+
+}
+
+.texto {
+    margin: 0 auto;
+    font-size: 20px;
+    color: #ffffff;
+    text-align: center;
+    width: 400px;
+}
+
+.video-responsive {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    /* Ajuste conforme necessário */
+}
+
+.retorno {
+    margin: 0 auto;
+    font-size: 20px;
+    color: #ffffff;
+    text-align: center;
+    width: 400px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+iframe {
+    border-radius: 18px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+
+.colorido {
+    color: gold
+}

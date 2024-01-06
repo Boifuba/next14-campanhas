@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Document</title>
+  </head>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/countup.js/2.8.0/countUp.min.js"></script>
+
+  <body>
+    <div class="tm-flex-center container-fluid shadow">
+      <div class="box-image tm-flex-center">
+        <i class="fa-regular fa-square-check fa-5x"></i>
+      </div>
+      <div class="text-title mt-40">The Algorithm</div>
+      <div class="tm-flex-center box-text container-fluid mt-40">
+        <p>
+          Wondering if the player eager to join your table is ready for the
+          adventure? Behold, the pinnacle of algorithmic sophistication! This
+          cutting-edge creation stems from a realm of research so advanced,
+          attempting to unravel its intricacies would make your average
+          calculator blush. Brace yourself, for this digital oracle operates on
+          a plane where mere mortals may struggle to grasp the profound
+          intricacies of its gaming divinations. Good luck decoding the enigma –
+          it's practically a digital Da Vinci code!
+        </p>
+      </div>
+      <div class="box-text question">
+        <p>1 - Does the player have an anime profile picture?</p>
+
+        <div class="form-check">
+          <input type="radio" id="q1" name="question1" value="-50" />
+          <label for="q1">Yes</label>
+        </div>
+
+        <div class="form-check">
+          <input type="radio" id="q2" name="question1" value="+20" />
+          <label for="q2">No</label>
+        </div>
+
+        <p>
+          2 - Does the player, unprompted, mention that they have over 30 years
+          of experience playing RPG?
+        </p>
+
+        <div class="form-check">
+          <input type="radio" id="q3" name="question2" value="-20" />
+          <label for="q3">Yes</label>
+        </div>
+        <div class="form-check">
+          <input type="radio" id="q4" name="question2" value="+10" />
+          <label for="q4">No</label>
+        </div>
+
+        <p>
+          3 - Even when no one is interested, does the player regale everyone
+          with stories of their old campaigns as if they were the most exciting
+          things that ever happened?
+        </p>
+
+        <div class="form-check">
+          <input type="radio" id="q5" name="question3" value="-30" />
+          <label for="q5">Yes</label>
+        </div>
+        <div class="form-check">
+          <input type="radio" id="q6" name="question3" value="+10" />
+          <label for="q6">No</label>
+        </div>
+
+        <p>
+          4 -Is the player easily distracted and completely ignores you while
+          asking the same questions over and over again?
+        </p>
+
+        <div class="form-check">
+          <input type="radio" id="q7" name="question4" value="-20" />
+          <label for="q7">Yes</label>
+        </div>
+        <div class="form-check">
+          <input type="radio" id="q8" name="question4" value="+50" />
+          <label for="q8">No</label>
+        </div>
+
+        <p>
+          5 - When pressed, does the player make up an excuse to leave, saying
+          something like, "I'll get you the sheet later, my mom wants me to take
+          my grandma to jiu-jitsu"?
+        </p>
+
+        <div class="form-check">
+          <input type="radio" id="q9" name="question5" value="-50" />
+          <label for="q9">Yes</label>
+        </div>
+        <div class="form-check">
+          <input type="radio" id="q10" name="question5" value="+20" />
+          <label for="q10">No</label>
+        </div>
+
+        <p>
+          6 - Does the player have a sense of reason and can they come up with a
+          character concept that is at least somewhat grounded in the reality of
+          the game and doesn't look like a stupid anime character?
+        </p>
+
+        <div class="form-check">
+          <input type="radio" id="q11" name="question6" value="+20" />
+          <label for="q11">Yes</label>
+        </div>
+        <div class="form-check">
+          <input type="radio" id="q12" name="question6" value="-30" />
+          <label for="q12">No</label>
+        </div>
+
+        <p>7 - Can your player make their own character sheet?</p>
+        <div class="form-check">
+          <input type="radio" id="q13" name="question7" value="+30" />
+          <label for="q13">Yes</label>
+        </div>
+        <div class="form-check">
+          <input type="radio" id="q14" name="question7" value="-30" />
+          <label for="q14">No</label>
+        </div>
+
+        <div class="tm-flex-container mt-40">
+          <div class="tm-flex-center form-div div-row box-text half">
+            <div class="countup" id="countup">0%</div>
+          </div>
+
+          <div class="result-silver tm-flex-center box-text half div-row">
+            <div class="consideration">
+              <p>blá</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="tm-flex-center result">
+          <button
+            class="button"
+            href="#countup"
+            onclick="calculateSumOfSelectedRadios()"
+          >
+            Submit
+          </button>
+        </div>
+      </div>
+      <a class="return" href="#top">return</a>
+    </div>
+    <footer class="box-text mt-20 tm-flex-center container-fluid">
+      <small>
+        If you're the type of person who reads footers and is offended by this
+        calculator, you have two problems: reading footers and not understanding
+        irony.
+      </small>
+    </footer>
+    <script>
+function calculateSumOfSelectedRadios() {
+  let sum = 0;
+  let results = [];
+
+  const selectedRadios = document.querySelectorAll(
+    'input[type="radio"]:checked'
+  );
+
+  selectedRadios.forEach((radio) => {
+    sum += parseInt(radio.value);
+  });
+
+  const percentage = calculatePercentage(sum);
+
+  const percentageElement = document.querySelector(".countup");
+  percentageElement.textContent = `${percentage.toFixed()}%`;
+
+  console.log("Soma dos valores dos radios selecionados:", sum);
+  console.log(`Porcentagem de chance de jogar: ${percentage.toFixed()}%`);
+
+  if (percentage > 0) {
+    if (document.getElementById("q1").checked) {
+      results.push(
+        "People with anime avatar are a bunch of immature with no commitment. They will cause problems and leave your table."
+      );
+    }
+    if (document.getElementById("q3").checked) {
+      results.push(
+        "This guy is just bragging like RPG was a profession since he probably doesn't have success in anything else in his life. If you give him attention, he will play four sessions at most and then disappear."
+      );
+    }
+    if (document.getElementById("q5").checked) {
+      results.push(
+        "This guy is just needy and a very annoying person. Every rule that is different from what he thinks is right he will create a problem and will quietly give up on your table."
+      );
+    }
+    if (document.getElementById("q7").checked) {
+      results.push(
+        "This one has attention deficit disorder, he will probably play if he can remember the days and times of the game, but he will be a nuisance distracting himself and other players with parallel topics."
+      );
+    }
+    if (document.getElementById("q9").checked) {
+      results.push(
+        "This is the liar or lazy, doesn't know how to make a character sheet and can't admit it and will make excuses not to show up, if he is the type that says he has been playing for many years and keeps telling stories without anyone asking, ignore the quiz result because he will not play anyway."
+      );
+    }
+    if (document.getElementById("q12").checked) {
+      results.push(
+        "This is a type of player who likes Naruto and was raised by his grandmother. He lives in a world of fantasies and does not understand that even in RPG there are rules. As soon as he sees that his power is not so great, he will quit the table, usually before the first combat."
+      );
+    }
+    if (document.getElementById("q14").checked) {
+      results.push(
+        "In general, these people play but only need help. If you checked yes on question 1, 4, or 5, give up because he is a waste of time."
+      );
+    }
+    displayResults(percentage, results);
+  } else {
+    results = [];
+    displayResults(percentage, results);
+  }
+
+  function calculatePercentage(value) {
+    if (value < 0) {
+      return 0;
+    }
+
+    const percentage = (value / 160) * 100;
+
+    return percentage > 100 ? 100 : percentage;
+  }
+  function displayResults(percentage, results) {
+    const considerationElement = document.querySelector(".consideration");
+    let content = "";
+
+    if (percentage >= 0) {
+      const listItems = results.map((item) => `<li>${item}</li>`).join("");
+      content += `<ul>${listItems}</ul>`;
+    }
+
+    if (percentage >= 99) {
+      content += `<li>You found a greater player, congratulations!!</li>`;
+    }
+
+    if (percentage <= 0) {
+      content += `<p>The player will not show his face on your table!</p>`;
+    }
+
+    considerationElement.innerHTML = content;
+  }
+}
+
+
+    </script>
+  </body>
+</html>

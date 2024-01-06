@@ -1,0 +1,131 @@
+.wrapper {
+    box-sizing: border-box;
+    width: 1200px;
+    height: 100%;
+    background-color: aliceblue;
+    border-radius: 18px;
+    margin: 0 auto;
+    margin-top: 100px;
+    padding: 20px;
+    display: flex;
+    /* Adicione esta linha */
+    justify-content: center;
+    /* Adicione esta linha */
+    flex-direction: column;
+    /* Adicione esta linha */
+}
+
+.wrapper form input {
+    height: 40px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    padding: 0 10px;
+    margin-left: 10px;
+}
+
+
+.firstline {
+    display: flex;
+    margin-bottom: 10px;
+    width: 100%;
+    align-items: center;
+    gap: 10px;
+}
+
+
+.firstline .title {
+    flex: 1;
+}
+
+.secondline {
+    display: flex;
+    margin-bottom: 10px;
+    width: 100%;
+    align-items: center;
+}
+
+.secondline .smalltext {
+    flex: 1;
+}
+
+.metatags {
+    display: flex;
+    width: 100%;
+}
+
+.metatags label,
+.metatags input {
+    margin: 15px 0 15px 0;
+    vertical-align: middle;
+}
+
+.metatags label {
+    margin-top: 20px;
+}
+
+.grid-two {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 10px;
+
+
+}
+
+
+.image {
+    flex: 1;
+    display: flex;
+    align-items: center;
+
+}
+
+.date {
+    flex: 1;
+    display: flex;
+    align-items: center;
+
+}
+
+.tags {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.tags input {
+    margin-right: 5px;
+
+
+}
+
+.checkbox-group {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+}
+
+
+.button-container {
+    display: flex;
+    justify-content: flex-end;
+
+    align-items: center;
+    margin-top: 30px;
+    gap: 10px;
+}
+
+
+
+
+fieldset {
+    margin-top: 20px;
+    padding: 20px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    border-radius: 18px;
+    border: 1px solid #363636;
+}

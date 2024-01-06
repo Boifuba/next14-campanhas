@@ -1,0 +1,18 @@
+User-agent: *
+Disallow: /api/
+Disallow: /Dashboard/
+Disallow: /Editor/
+Disallow: /Login/
+Disallow: /usersAdmin/
+Disallow: /Novo/
+Disallow: /Calculadoras/
+Disallow: /components/
+Disallow: /utilidades/
+
+
+
+Allow: /public/
+Allow: /bot/
+Allow: /Contato/
+Allow: /Post/
+Sitemap: https://campanhasdoboi.com.br/rpg/api/sitemap.xml
