@@ -1,7 +1,7 @@
 .header-wrapper {
     height: 100px;
     background-color: #222;
-    width: 100%;
+    width: auto;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -101,6 +101,16 @@
     right: 20px;
     top: 35px;
 }
+
+@media (max-width: 800px) {
+    .logged-name {
+        display: none;
+
+
+    }
+}
+
+
 
 .logged-name {
     color: aliceblue;

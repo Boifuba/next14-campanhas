@@ -1,8 +1,9 @@
 import { useState, useEffect, useCallback } from "react";
 import { PiCoinsDuotone } from "react-icons/pi";
 import Image from "next/image";
-
 import "./Prata.css";
+import Share from "@/components/Share";
+import Head from "next/head";
 // import "../globals.css";
 
 const url = `https://campanhasdoboi.com.br/rpg/Post/Prata`;
@@ -70,6 +71,45 @@ export default function Prata() {
   };
   return (
     <>
+      <Head>
+        <title>GURPS: Regra de Cavar Buraco</title>
+        <link rel="icon" href="/rpg/boi.svg" />
+        <meta name="description" content="Conversor de Prata para GURPS." />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="robots" content="index,follow" />
+        <meta name="author" content="Boifubá" />
+        <meta name="keywords" content="GURPS, Converor de Prata" />
+        <meta property="og:title" content="Conversor de Prata" />
+        <meta
+          property="og:description"
+          content="Uma calculadora para calcular o peso da prata usando as regras de GURPS."
+        />
+        <meta
+          property="og:url"
+          content="https://campanhasdoboi.com.br/rpg/Post/Prata"
+        />{" "}
+        <h2>Compartilhe</h2>
+        <meta
+          property="og:image"
+          content={"https://campanhasdoboi.com.br/rpg/silver.jpg"}
+        />
+        <meta name="theme-color" content="#ea4f4c"></meta>
+        <meta name="twitter:title" content="Calculadora de Prata para GURPS" />
+        <meta
+          name="twitter:description"
+          content="Uma calculadora para calcular o peso da prata usando as regras de GURPS."
+        />
+        <meta name="twitter:card" content="summary_large_image" />{" "}
+        <meta
+          name="twitter:image"
+          content={"https://campanhasdoboi.com.br/rpg/silver.jpg"}
+        />
+        <meta
+          name="description"
+          content="Uma calculadora para calcular o peso da prata usando as regras de GURPS."
+        />
+      </Head>
+
       <div className="wrapper">
         <div className="tm-flex-center container-fluid shadow">
           <div className="box-image">
@@ -129,6 +169,14 @@ export default function Prata() {
             </div>
           </div>
         </div>
+        <h2>Compartilhe</h2>
+        <Share
+          url={"https://campanhasdoboi.com.br/rpg/Post/Prata"}
+          title={"Calculadora de Prata para moedas para GURPS"}
+          description={
+            "Um conversor para ajudar nos cálculoos de loot em GURPS calculando o peso das moedas em prata."
+          }
+        />{" "}
       </div>
     </>
   );

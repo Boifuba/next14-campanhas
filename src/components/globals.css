@@ -35,6 +35,7 @@ h6 {
     margin: 0;
     line-height: 1.5;
     color: tomato;
+
 }
 
 a {
@@ -74,7 +75,7 @@ li {
     font-size: 1.2rem;
     font-weight: 400;
     line-height: 1.5;
-    color: tomato;
+    color: #333;
     margin-bottom: 20px;
     word-wrap: break-word;
     text-decoration: none;
@@ -86,6 +87,7 @@ b,
 strong {
     font-weight: 500;
 }
+
 
 .button {
     background: #FF4742;
@@ -156,3 +158,11 @@ input[type="checkbox"]+label {
     width: 100%;
     z-index: -1;
 } */
+/* Gradient transparent - color - transparent */
+
+hr {
+    border: 0;
+    height: 1px;
+    max-width: 80%;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(255, 102, 0, 0.75), rgba(0, 0, 0, 0));
+}

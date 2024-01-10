@@ -13,8 +13,7 @@ export async function getServerSideProps(context) {
   const { slug } = context.params;
 
   await mongoose.connect(process.env.MONGODB_URI, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
+    useNewUrlPrser: true,
   });
 
   const post = await BlogPost.findOne({ slug: slug });

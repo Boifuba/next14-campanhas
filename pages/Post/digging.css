@@ -1,0 +1,136 @@
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0 50px 50px 50px;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 40px;
+}
+
+.column-1,
+.column-2,
+.column-3 {
+    width: 350px;
+}
+
+.column-3 {
+    font-size: larger;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+label {
+    display: flex;
+    color: tomato;
+    font-size: 20px;
+    margin-bottom: 10px;
+    justify-content: center;
+    align-items: center;
+
+
+}
+
+input {
+    flex-grow: 1;
+    margin-left: 10px;
+    justify-content: flex-end;
+    font-size: 1rem;
+    margin-bottom: 10px;
+    text-align: center;
+    border-radius: 18px;
+    border: 1px solid #ccc;
+    height: 40px;
+    width: 100%;
+
+}
+
+select {
+    display: flex;
+    width: 100%;
+    margin-left: 10px;
+    font-size: 1rem;
+    margin-bottom: 10px;
+    text-align: center;
+    border-radius: 18px;
+    border: 1px solid #ccc;
+    height: 40px;
+}
+
+input[type="submit"] {
+    width: 100%;
+    /* Faz o botão de submit ter a largura total */
+}
+
+button {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    /* Faz o botão de submit ter a largura total */
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.porra {
+    margin-bottom: 40px;
+}
+
+input[type="checkbox"] {
+    cursor: pointer;
+
+}
+
+.title {
+    color: tomato;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    font-weight: 500;
+
+}
+
+.result {
+    color: #333;
+    margin: 0;
+    padding-bottom: 5px;
+    text-align: center;
+}
+
+.image-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 20px;
+    border-radius: 18px 18px 0 0;
+    overflow: hidden;
+}
+
+.share-buttons {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+
+}
+
+.share-buttons svg {
+    width: 50px;
+    height: 50px;
+}
+
+h2 {
+    margin-top: 30px;
+    margin-bottom: -20px;
+}

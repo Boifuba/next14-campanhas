@@ -127,10 +127,6 @@ const AccordionMenu = () => {
             <SiDiscord className="icon" />
             Discord Bot
           </Link>
-          <Link href="/Bot">
-            <BsCalculator className="icon" />
-            Calculadoras
-          </Link>
           <Link href="/Contato">
             <GrContact className="icon" />
             Contatos
@@ -142,12 +138,13 @@ const AccordionMenu = () => {
               Admin Page
             </Link>
           )}
-          {userRole === "admin" && (
-            <Link href="/Dashboard">
-              <RiAdminFill className="icon" />
-              Dashboard{" "}
-            </Link>
-          )}
+          {userRole === "admin" ||
+            ("contributor" && (
+              <Link href="/Dashboard">
+                <RiAdminFill className="icon" />
+                Dashboard{" "}
+              </Link>
+            ))}
           {user && (
             <Link href={`/usersAdmin/Painel/${user.uid}`}>
               <FaRegEdit className="icon" />

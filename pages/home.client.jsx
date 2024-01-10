@@ -18,14 +18,17 @@ export default function HomeClient({ items = [], tags = [] }) {
   return (
     <>
       <Head>
-        <link rel="preload" href="/silver.jpg" as="image" />
-        <link rel="preload" href="/gerador.jpg" as="image" />
+        <title>Campanhas do Boi</title>
+        <link rel="icon" href="/rpg/boi.svg" />
+        <link rel="preload" href="/rpg/silver.jpg" as="image" />
+        <link rel="preload" href="/rpg/gerador.jpg" as="image" />
         <meta
           name="description"
           content="Um Blog com conteúdo bacana para melhorar sua mesa de RPG e levar suas campanhas ao infinito em qualquer sistema."
         />
+
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/boi.svg" />
+        <link rel="icon" href="/rpg/favicon/favicon.ico" />
         <meta name="keywords" content="mesa de rpg, rpg de mesa, rpg, GURPS" />
         <meta name="author" content="Boifubá" />
 
@@ -34,8 +37,11 @@ export default function HomeClient({ items = [], tags = [] }) {
           property="og:description"
           content="Um Blog com conteúdo bacana para melhorar sua mesa de RPG e levar suas campanhas ao infinito em qualquer sistema."
         />
-        <meta property="og:image" content="/boi.svg" />
-        <meta property="og:url" content="https://campanhasdoboi.com.br/rpg" />
+        <meta
+          property="og:image"
+          content="https://campanhasdoboi.com.br/rpg/boi.svg"
+        />
+
         <meta property="og:type" content="website" />
       </Head>
       <main>

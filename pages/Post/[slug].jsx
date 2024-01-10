@@ -10,16 +10,14 @@ import Head from "next/head";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import TableOfContents from "../../src/components/TableOfContents";
-
+import AdComponent from "../../src/components/googleAds"; // Importe o componente AdComponent no início do arquivo
+import PostsGroupedByMonth from "../../src/components/indiceData";
 import "./slug.css";
 
 dotenv.config();
 
 export async function getStaticPaths() {
-  await mongoose.connect(process.env.MONGODB_URI, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  });
+  await mongoose.connect(process.env.MONGODB_URI, {});
 
   // Busque todos os slugs do MongoDB
   const posts = await BlogPost.find({}, "slug");
@@ -37,7 +35,6 @@ export async function getStaticPaths() {
 export async function getStaticProps({ params }) {
   await mongoose.connect(process.env.MONGODB_URI, {
     useNewUrlParser: true,
-    useUnifiedTopology: true,
   });
 
   // Busque o post específico do MongoDB com base no slug da URL
@@ -81,6 +78,7 @@ const PostPage = ({ item, recentPosts }) => {
     <>
       <Head>
         <title>{item.title}</title>
+        <link rel="icon" href="/rpg/boi.svg" />
         <meta name="description" content={item.smalltext} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="robots" content="index,follow" />
@@ -110,6 +108,7 @@ const PostPage = ({ item, recentPosts }) => {
         />
         <meta name="description" content={item.smalltext} />
         {/* ...rest of your meta tags... */}
+        <AdComponent />
       </Head>
       ;
       <div className="entire">
@@ -164,16 +163,31 @@ const PostPage = ({ item, recentPosts }) => {
                 </Link>
               ))}
             </div>
+          </div>
+          <div className="aside">
+            <h2>Índice</h2>
+            <TableOfContents />
+            <div id="ad-container" />
+            <AdComponent />
+            <hr className="shine" />
+            <PostsGroupedByMonth />
+            <hr />
             <Share
               url={currentUrl}
               title={item.title}
               description={item.smalltext}
             />
-          </div>
-          <div className="aside">
-            <h2>Índice</h2>
-            <TableOfContents />
-            <hr />
+            <h2>Publicidade</h2>
+            <Link href={"https://www.sjgames.com/"}>
+              <Image
+                className="rata"
+                src={"/rpg/template.jpg"}
+                alt={"tu tenso que é necessário para esmagar a minha rata?"}
+                width={180}
+                height={500}
+                link={""}
+              />{" "}
+            </Link>
           </div>
         </div>
       </div>

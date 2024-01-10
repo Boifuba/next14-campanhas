@@ -5,7 +5,16 @@
       "title": "Calculadora de Prata",
       "smalltext": "Um jeito muito melhor de calcular o valor da prata do seu loot.",
       "tags": ["Calculadora", "GURPS"],
-      "slug": "Prata"
+      "slug": "Prata",
+      "date": "2023-10-11"
+    },
+    {
+      "img": "digging.jpg",
+      "title": "Regra de Cavar Buraco em GURPS",
+      "smalltext": "Você só não joga GURPS porque não sabe a regra de Cavar Buracos? Seus problemas acabaram!.",
+      "tags": ["Calculadora", "GURPS"],
+      "slug": "Regra_de_cavar_buraco",
+      "date": "2024-01-07"
     }
   ]
 }

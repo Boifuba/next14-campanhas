@@ -17,7 +17,6 @@ export default function Header() {
                   alt="boi"
                   width={150}
                   height={150}
-                  layout="fixed"
                   className="logo-image"
                 />
               </Link>

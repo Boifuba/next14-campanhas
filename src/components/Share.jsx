@@ -15,19 +15,23 @@ export default function Share({ url, title, description }) {
   return (
     <div className="share-buttons">
       <FacebookShareButton url={url}>
-        <FacebookIcon size={50} round={true} />
+        <FacebookIcon size={35} round={true} />
         <span></span>
       </FacebookShareButton>
       <WhatsappShareButton url={url} title={title}>
-        <WhatsappIcon size={50} round={true} />
+        <WhatsappIcon size={35} round={true} separator=":: " />
       </WhatsappShareButton>
       <TelegramShareButton url={url}>
-        <TelegramIcon size={50} round={true} />
+        <TelegramIcon size={35} round={true} />
         <span></span>
       </TelegramShareButton>
-      <TwitterShareButton url={url}>
-        <TwitterIcon size={50} round={true} />
-        <span></span>
+      <TwitterShareButton
+        url={url}
+        title={title}
+        hashtags={["Boifubá"]}
+        via="CampanhasdoBoi"
+      >
+        <TwitterIcon size={35} round={true} />
       </TwitterShareButton>
       <a
         href={`https://discord.com/share?text=${encodeURIComponent(
@@ -35,14 +39,7 @@ export default function Share({ url, title, description }) {
         )}&url=${encodeURIComponent(url)}`}
         target="_blank"
         rel="noopener noreferrer"
-      >
-        <Image
-          src={"/rpg/" + "discord-icon.svg"}
-          alt="Share on Discord"
-          width={50}
-          height={50}
-        />{" "}
-      </a>
+      ></a>
     </div>
   );
 }

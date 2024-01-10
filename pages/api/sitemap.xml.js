@@ -10,6 +10,11 @@ const sitemapHandler = async (req, res) => {
     { url: "/rpg/Post/Prata", changefreq: "monthly", priority: 0.8 },
     { url: "/rpg/Bot", changefreq: "monthly", priority: 0.8 },
     { url: "/rpg/Post/gerador_de_mapas", changefreq: "monthly", priority: 0.7 },
+    {
+      url: "/rpg/Post/Regra_de_cavar_buraco",
+      changefreq: "daily",
+      priority: 0.9,
+    },
   ];
 
   // Create a stream to write to

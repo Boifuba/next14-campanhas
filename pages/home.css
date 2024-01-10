@@ -26,10 +26,23 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
+    flex-wrap: wrap;
 
 }
 
+#__next {
+    width: 100%;
+    overflow: auto;
 
+}
+
+@media (max-width: 1200px) {
+    .grid-isotope {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+}
 
 @media (max-width: 800px) {
     .grid-isotope {
@@ -37,6 +50,8 @@
         grid-template-columns: repeat(1, 1fr);
         gap: 10px;
     }
+
+
 }
 
 .isotope {
@@ -50,12 +65,24 @@
 
 }
 
+@media (max-width: 1200px) {
+    .grid-item {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        max-width: 500px;
+
+        margin: auto;
+        margin-top: 20px;
+    }
+}
+
 @media (max-width: 800px) {
     .grid-item {
         display: flex;
         justify-content: center;
         align-items: center;
-        max-width: 350px;
+        max-width: 300px;
         margin: auto;
         margin-top: 20px;
     }

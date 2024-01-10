@@ -4,6 +4,8 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import dotenv from "dotenv";
 ///IMPORT DO REDIRECT
+import { getAuth } from "firebase/auth"; // Adicione esta linha
+
 import { useRouter } from "next/router";
 import { auth, db } from "../api/firebase"; // Importe o auth e db do seu arquivo firebase
 import { collection, doc, getDoc } from "firebase/firestore";
@@ -15,8 +17,7 @@ dotenv.config();
 
 export async function getServerSideProps() {
   await mongoose.connect(process.env.MONGODB_URI, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
+    useNewUrlPrser: true,
   });
 
   const result = await BlogPost.find({});
@@ -27,14 +28,12 @@ export async function getServerSideProps() {
 
 export default function Dashboard({ data }) {
   const [posts, setPosts] = useState(data);
-
-  /// ESSSA MERDA REDIRECIONA
-  /// ESSSA MERDA REDIRECIONA
-  /// ESSSA MERDA REDIRECIONA
+  const [filteredPosts, setFilteredPosts] = useState([]);
   const [isAdmin, setIsAdmin] = useState(false);
   const router = useRouter();
 
   useEffect(() => {
+    const auth = getAuth();
     auth.onAuthStateChanged(async (user) => {
       if (user) {
         // O usuário está logado
@@ -42,22 +41,32 @@ export default function Dashboard({ data }) {
         const docSnap = await getDoc(userDoc);
         const userData = docSnap.data();
 
-        if (userData && userData.role === "admin") {
-          // O usuário é um administrador
-          setIsAdmin(true);
-        } else {
-          // O usuário não é um administrador
-          router.push("/");
+        if (userData) {
+          if (userData.role === "admin") {
+            // O usuário é um administrador
+            setIsAdmin(true);
+
+            // Mostrar todos os posts
+            setFilteredPosts(posts);
+          } else if (userData.role === "contributor") {
+            // O usuário é um contribuidor
+
+            // Filtrar posts para mostrar apenas aqueles onde o campo author é igual ao displayName do usuário
+            const userPosts = posts.filter(
+              (post) => post.author === user.displayName
+            );
+            setFilteredPosts(userPosts);
+          } else {
+            // O usuário não é um administrador nem um contribuidor
+            router.push("/");
+          }
         }
       } else {
         // O usuário não está logado
         router.push("/");
       }
     });
-  }, [router]);
-  if (!isAdmin) {
-    return null;
-  }
+  }, [auth.currentUser]);
   //TERMINA AQUI VERIFICAR O ROUTE
   //TERMINA AQUI VERIFICAR O ROUTE
   //TERMINA AQUI VERIFICAR O ROUTE
@@ -106,6 +115,33 @@ export default function Dashboard({ data }) {
 
   return (
     <>
+      <div className="wrapper">
+        <h1>Leia antes de postar</h1>
+        <p>
+          Aqui você encontrará uma lista de todos os posts feitos por você com
+          título, descrição e uma imagem. Por enquanto por questões técnicas eu{" "}
+          <strong>preciso que a imagem seja enviada para mim</strong>. Os botões
+          são as ações disponíveis:
+          <ul>
+            <li>Novo: Cria uma nova postagem.</li>
+            <li>Deletar: Apaga toda a sua postagem</li>
+            <li>Editar: Redireciona você para a edição da postagem.</li>
+            <li>
+              Mostrar: Vai estar em verde e se você clicar você publicar a
+              postagem. (por enquanto não deve estar liberado)
+            </li>
+            <li>
+              Esconder: vai estar em vermelho e serve para retirar a postagem do
+              ar somente e sem deletar (Por enquanto não está liberado)
+            </li>
+
+            <h2>
+              Eu sei que o blog ainda tem problemas, qualquer coisa mesmoo que
+              ache uma bobagem, por favor me avise.
+            </h2>
+          </ul>{" "}
+        </p>
+      </div>
       <div className="editor-wrapper">
         <div className="button-container">
           <button className="button verde" onClick={() => router.push(`/Novo`)}>
@@ -113,7 +149,7 @@ export default function Dashboard({ data }) {
           </button>
         </div>
         <div className="editor-grid">
-          {posts.map((item, index) => (
+          {filteredPosts.map((item, index) => (
             <div key={index} className="editor-grid-item">
               <div className="editor-grid-img">
                 <Image

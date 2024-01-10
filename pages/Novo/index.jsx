@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Editor } from "@tinymce/tinymce-react";
 
 import { useRouter } from "next/router";
+import { getAuth } from "firebase/auth";
 
 import { doc, getDoc } from "firebase/firestore";
 import { db } from "../api/firebase";
@@ -18,6 +19,7 @@ export default function Novo() {
     show: false,
     metatags: [],
     title: "",
+    author: "",
     img: "",
     slug: "",
     checkbox1: false,
@@ -28,7 +30,18 @@ export default function Novo() {
     checkbox6: false,
     editorContent: "",
   });
+
   const [isSubmitted, setIsSubmitted] = useState(false);
+  useEffect(() => {
+    const auth = getAuth();
+    const user = auth.currentUser;
+    if (user) {
+      setData((prevData) => ({
+        ...prevData,
+        author: user.displayName || user.email,
+      }));
+    }
+  }, [getAuth().currentUser]);
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -49,7 +62,6 @@ export default function Novo() {
     }
   };
 
-  //redireciona para a S
   return (
     <>
       <div className="wrapper">

@@ -29,7 +29,7 @@ const UsersPage = () => {
         router.replace("/");
       }
     });
-  }, []);
+  }, [router]);
 
   useEffect(() => {
     const fetchUsers = async () => {
