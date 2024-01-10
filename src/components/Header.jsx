@@ -10,7 +10,7 @@ export default function Header() {
       <header>
         <div className="header-wrapper">
           <div className="itens-position">
-            <div className="header-logo">
+            <div className="logo-container">
               <Link href="/">
                 <Image
                   src={"/rpg/boi.svg"}

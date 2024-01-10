@@ -41,7 +41,7 @@ export default function Novo() {
         author: user.displayName || user.email,
       }));
     }
-  }, [getAuth().currentUser]);
+  }, []);
 
   const handleSubmit = async (event) => {
     event.preventDefault();

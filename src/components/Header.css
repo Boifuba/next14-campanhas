@@ -3,30 +3,37 @@
     background-color: #222;
     width: auto;
     display: flex;
-    align-items: center;
-    justify-content: center;
 
+    justify-content: center;
 }
 
-.header-logo {
+.itens-position {
+    width: 1200px;
+    height: 80px;
+    margin-top: 25px;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
+    align-items: center;
+    /* Isso coloca espaço máximo entre os itens */
+
+
 }
 
-.header-logo img {
-    max-width: 150px;
+.logo-container {
+    display: flex;
+    margin-top: 60px;
+
+
+}
+
+.accordion {
+    margin-left: auto;
+
 }
 
 .header-wrapper p {
     color: #fff;
 
-
-}
-
-.itens-position {
-    width: 1200px;
-    margin: 0 auto;
-    height: 80px;
 
 }
 
@@ -38,11 +45,9 @@
 .menu-links {
     display: flex;
     flex-direction: column;
-    position: absolute;
-    right: 10px;
-    top: 100px;
     background-color: #222;
-
+    margin-top: 320px;
+    margin-right: 0px;
 
 }
 
@@ -70,9 +75,6 @@
 }
 
 
-
-
-
 .icon {
     color: rgb(86, 86, 86);
     font-size: 24px;
@@ -88,7 +90,6 @@
     color: aliceblue;
     font-size: 30px;
     cursor: pointer;
-    position: absolute;
     right: 20px;
     top: 20px;
 }
@@ -97,9 +98,21 @@
     color: aliceblue;
     font-size: 30px;
     cursor: pointer;
-    position: absolute;
-    right: 20px;
-    top: 35px;
+    /* margin-top: 20px; */
+
+
+}
+
+.logado {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: aliceblue;
+    font-size: 16px;
+    cursor: pointer;
+    gap: 10px;
+    /* margin-top: 20px; */
+
 }
 
 @media (max-width: 800px) {
@@ -116,8 +129,6 @@
     color: aliceblue;
     font-size: 16px;
     cursor: pointer;
-    position: absolute;
-    right: 90px;
-    top: 35px;
+
 
 }

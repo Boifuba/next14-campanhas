@@ -10,7 +10,6 @@ import Head from "next/head";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import TableOfContents from "../../src/components/TableOfContents";
-import AdComponent from "../../src/components/googleAds"; // Importe o componente AdComponent no início do arquivo
 import PostsGroupedByMonth from "../../src/components/indiceData";
 import "./slug.css";
 
@@ -18,7 +17,6 @@ dotenv.config();
 
 export async function getStaticPaths() {
   await mongoose.connect(process.env.MONGODB_URI, {});
-
   // Busque todos os slugs do MongoDB
   const posts = await BlogPost.find({}, "slug");
   const slugsFromDb = posts.map((post) => post.slug);
@@ -33,9 +31,7 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }) {
-  await mongoose.connect(process.env.MONGODB_URI, {
-    useNewUrlParser: true,
-  });
+  await mongoose.connect(process.env.MONGODB_URI, {});
 
   // Busque o post específico do MongoDB com base no slug da URL
   const post = await BlogPost.findOne({ slug: params.slug });
@@ -108,7 +104,6 @@ const PostPage = ({ item, recentPosts }) => {
         />
         <meta name="description" content={item.smalltext} />
         {/* ...rest of your meta tags... */}
-        <AdComponent />
       </Head>
       ;
       <div className="entire">
@@ -168,7 +163,6 @@ const PostPage = ({ item, recentPosts }) => {
             <h2>Índice</h2>
             <TableOfContents />
             <div id="ad-container" />
-            <AdComponent />
             <hr className="shine" />
             <PostsGroupedByMonth />
             <hr />

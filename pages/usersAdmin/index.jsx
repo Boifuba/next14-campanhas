@@ -4,9 +4,9 @@ import { useRouter } from "next/router";
 import "./usersAdmin.css";
 import Image from "next/image";
 
-import { auth } from "../../pages/api/firebase";
+import { auth } from "../api/firebase";
 import { collection, getDocs, doc, getDoc } from "firebase/firestore";
-import { db } from "../../pages/api/firebase";
+import { db } from "../api/firebase";
 
 const UsersPage = () => {
   const [users, setUsers] = useState([]);

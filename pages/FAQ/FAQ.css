@@ -1,0 +1,51 @@
+.wrapper {
+    box-sizing: border-box;
+    padding: 50px;
+    height: 100%;
+}
+
+.f-container h2 {
+    color: tomato;
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.title {
+    background-color: tomato;
+    color: white;
+    height: 50px;
+    font-size: 30px;
+    font-weight: 700;
+    padding: 5px 0 5px 25px;
+}
+
+.f-container {
+    display: grid;
+    grid-template-columns: 950px 150px;
+}
+
+.f-container h1 {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin: 50px;
+}
+
+.f-container h3 {
+    margin-top: 40px;
+
+
+}
+
+.faq {}
+
+.indice ul {
+    list-style-type: decimal !important;
+    padding-left: 10px;
+}
+
+.indice li,
+.indice a {
+    color: black;
+}

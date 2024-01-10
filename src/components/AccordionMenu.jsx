@@ -103,7 +103,9 @@ const AccordionMenu = () => {
     <div className="accordion-menu" ref={menuRef}>
       <div className="menu-icon" onClick={() => setIsOpen(!isOpen)}>
         {user ? (
-          <>
+          <div className="logado">
+            <span className="logged-name">{user.displayName}</span>
+
             <Image
               src={user.photoURL}
               alt="User profile"
@@ -111,8 +113,7 @@ const AccordionMenu = () => {
               height={80}
               className="user-profile"
             />
-            <span className="logged-name">{user.displayName}</span>
-          </>
+          </div>
         ) : (
           <FaBars className="fa-bars" />
         )}
@@ -138,13 +139,12 @@ const AccordionMenu = () => {
               Admin Page
             </Link>
           )}
-          {userRole === "admin" ||
-            ("contributor" && (
-              <Link href="/Dashboard">
-                <RiAdminFill className="icon" />
-                Dashboard{" "}
-              </Link>
-            ))}
+          {(userRole === "admin" || userRole === "contributor") && (
+            <Link href="/Dashboard">
+              <RiAdminFill className="icon" />
+              Dashboard{" "}
+            </Link>
+          )}
           {user && (
             <Link href={`/usersAdmin/Painel/${user.uid}`}>
               <FaRegEdit className="icon" />

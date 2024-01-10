@@ -1,24 +1,12 @@
 import RootLayout from "../components/Layout";
 import Link from "next/link";
-import Head from "next/head";
 import "./not-found.css";
 
 export default function Custom404() {
   return (
     <>
-      <Head>
-        <title>Not Found do Boi.</title>
-        <meta
-          name="description"
-          content="Cade a página de RPG que estava aqui?"
-        />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="robots" content="index,follow" />
-        <meta name="author" content="Boifubá" />
-        <meta name="title" content="Not Found do Boi" />
-      </Head>
       <RootLayout>
-        <div className="container">
+        <div className="container-404">
           <div className="big">404</div>
           <div className="sefudeu">SE FUDEU</div>
           <div className="texto">

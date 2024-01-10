@@ -8,6 +8,9 @@ Disallow: /Novo/
 Disallow: /Calculadoras/
 Disallow: /components/
 Disallow: /utilidades/
+Disallow: /Privacidade/
+Disallow: /FAQ/
+
 
 
 

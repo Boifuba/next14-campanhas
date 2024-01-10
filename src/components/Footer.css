@@ -7,10 +7,82 @@ footer {
     background-color: #222;
     box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.25);
     color: white;
-    margin-top: 150px;
+    bottom: 0;
+    margin-top: 100px;
 
     @media (max-width: 768px) {
         flex-direction: column;
         padding: 10px;
     }
+}
+
+.container {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.container h2 {
+    color: whitesmoke;
+    font-weight: 400;
+    font-size: 1rem;
+    justify-content: flex-start;
+    margin-bottom: 10px;
+}
+
+.container li,
+.container a {
+    color: whitesmoke;
+    font-weight: 200;
+    font-size: 1rem;
+    justify-content: flex-start;
+    text-decoration: none;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+}
+
+.contato,
+.menu {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    align-content: flex-start;
+    margin: 0;
+    padding: 0;
+}
+
+
+.compartilhe svg {
+    margin-right: 10px;
+    margin-bottom: 10px;
+    height: 50px;
+
+}
+
+.footer-icons {
+    margin-right: 10px;
+    opacity: 50%;
+}
+
+.contato li {
+    display: flex;
+    align-items: center;
+}
+
+.siga {
+
+    font-size: 19px;
+    opacity: 50%;
+
+
+}
+
+.siga:hover {
+    color: tomato;
+    cursor: pointer;
 }

@@ -110,11 +110,11 @@ export default function Painel() {
             <small>Não use mais que 300 caracteres.</small>
 
             <div className="buttons-box">
-              <Link href="/usersAdmin">
+              {/* <Link href="/usersAdmin">
                 {user &&
                   user.role !== "user" &&
                   user.role !== "contributor" && <button>Voltar</button>}
-              </Link>
+              </Link> */}
               <Link href="/">
                 <button className="button vermelho">Página Inicial</button>
               </Link>
