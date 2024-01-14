@@ -12,7 +12,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { FaBars, FaHome, FaRegEdit } from "react-icons/fa";
 import { SiDiscord } from "react-icons/si";
-import { BsCalculator } from "react-icons/bs";
 import { GrContact } from "react-icons/gr";
 import { RiAdminFill } from "react-icons/ri";
 import { VscSignOut } from "react-icons/vsc";
@@ -101,7 +100,7 @@ const AccordionMenu = () => {
 
   return (
     <div className="accordion-menu" ref={menuRef}>
-      <div className="menu-icon" onClick={() => setIsOpen(!isOpen)}>
+      <div onClick={() => setIsOpen(!isOpen)}>
         {user ? (
           <div className="logado">
             <span className="logged-name">{user.displayName}</span>
@@ -118,21 +117,9 @@ const AccordionMenu = () => {
           <FaBars className="fa-bars" />
         )}
       </div>
+      {/* ESSA PARTE AQUI */}
       {isOpen && (
-        <div className="menu-links">
-          <Link href="/">
-            <FaHome className="icon" />
-            Página Inicial
-          </Link>
-          <Link href="/Bot">
-            <SiDiscord className="icon" />
-            Discord Bot
-          </Link>
-          <Link href="/Contato">
-            <GrContact className="icon" />
-            Contatos
-          </Link>
-
+        <div className="menu-links submenu">
           {userRole === "admin" && (
             <Link href="/usersAdmin">
               <RiAdminFill className="icon" />
@@ -164,6 +151,7 @@ const AccordionMenu = () => {
           )}
         </div>
       )}
+      {/* TERMINA AQUI */}
     </div>
   );
 };

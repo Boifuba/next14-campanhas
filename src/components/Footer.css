@@ -34,15 +34,14 @@ footer {
 
 .container li,
 .container a {
-    color: whitesmoke;
-    font-weight: 200;
-    font-size: 1rem;
+    color: #f4f4f4;
+    font-weight: 400;
+    font-size: 0.9rem;
     justify-content: flex-start;
     text-decoration: none;
     list-style: none;
     margin: 0;
     padding: 0;
-
 }
 
 .contato,
@@ -56,12 +55,14 @@ footer {
     padding: 0;
 }
 
+.menu a:hover {
+    color: tomato;
+}
 
 .compartilhe svg {
     margin-right: 10px;
     margin-bottom: 10px;
     height: 50px;
-
 }
 
 .footer-icons {
@@ -74,15 +75,21 @@ footer {
     align-items: center;
 }
 
-.siga {
+.contato a:hover {
+    color: tomato;
+}
 
+.siga {
     font-size: 19px;
     opacity: 50%;
-
-
 }
 
 .siga:hover {
+    color: tomato;
+    cursor: pointer;
+}
+
+.outro a:hover {
     color: tomato;
     cursor: pointer;
 }

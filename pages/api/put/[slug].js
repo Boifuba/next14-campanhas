@@ -10,11 +10,11 @@ export default async function handler(req, res) {
   }
 
   try {
-    console.log("Received PUT request for slug:", slug);
+    console.error("Received PUT request for slug:", slug);
 
     // Conecta ao banco de dados
     await dbConnect();
-    console.log("Connected to the database");
+    console.error("Connected to the database");
 
     // Adiciona um delay de 1 segundo (1000 milissegundos)
     await new Promise((resolve) => setTimeout(resolve, 1000));
@@ -23,8 +23,6 @@ export default async function handler(req, res) {
       new: true,
       runValidators: true,
     };
-
-    console.log("Updating blog post with data:", req.body);
 
     // Encontrar o documento pelo slug e atualizá-lo
     const updatedBlogPost = await Blog.findOneAndUpdate(

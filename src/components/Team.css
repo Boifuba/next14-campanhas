@@ -1,0 +1,111 @@
+.faixa {
+    background-color: tomato;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 60px;
+}
+
+.faixa h1 {
+    text-align: center;
+    margin: auto;
+    margin-bottom: 40px;
+    color: gold;
+    font-size: 40px;
+}
+
+.card-box {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    gap: 80px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.card {
+    width: 400px;
+    height: 185px;
+    border-radius: 10px;
+    color: aliceblue;
+    background-color: #333;
+    display: flex;
+    margin-right: auto;
+    align-items: center;
+    padding: 20px;
+    position: relative;
+    cursor: pointer;
+    line-height: 1.2;
+}
+
+
+.card img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    display: block;
+    margin-left: -80px;
+    transition: 0.5s;
+}
+
+.card::after {
+    content: "";
+    position: absolute;
+    margin-left: -70px;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0);
+    transition: 0.5s;
+}
+
+/* .card:hover::after {
+    background: rgba(0, 0, 0, 0.6);
+}
+
+.card img:hover {
+    transform: scale(1.1);
+} */
+
+.hover-texto {
+    display: flex;
+    position: relative;
+    margin-left: 70px;
+    margin-top: auto;
+    align-items: center;
+    justify-content: center;
+}
+
+.hover-texto .posts {
+    color: #f4f4f4;
+    font-size: 20px;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+}
+
+.info {
+    height: 100%;
+    margin-left: 10px;
+}
+
+.intro p {
+    color: aliceblue;
+    font-size: 15px;
+    line-height: 1.3;
+}
+
+.nome {
+    font-size: 24px;
+    font-weight: 500;
+    color: goldenrod;
+}
+
+small {
+    color: rgb(202, 202, 202);
+    font-size: 15px;
+}

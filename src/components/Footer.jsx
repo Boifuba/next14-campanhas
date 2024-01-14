@@ -46,7 +46,9 @@ export default function Footer() {
             </li>
             <li>
               <FaDiscord className="footer-icons" />
-              <Link href={"https://discord.gg/rrXBAc4x"}>Discord</Link>
+              <Link href={"https://discord.com/invite/223PjGAM2Y"}>
+                Discord
+              </Link>
             </li>
           </div>
           <div className="outro">
@@ -66,7 +68,7 @@ export default function Footer() {
             <Link href={"https://twitter.com/CampanhasdoBoi"}>
               <BsTwitterX className="siga" />
             </Link>
-            <Link href={"https://discord.gg/6Hv3MeSp"}>
+            <Link href={"https://discord.com/invite/223PjGAM2Y"}>
               <FaDiscord className="siga" />
             </Link>
             <Link href={"https://chat.whatsapp.com/FYYI0Rf5WRyA4zcYWZYTJE"}>

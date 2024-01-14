@@ -1,7 +1,27 @@
 import "./privacidade.css";
+import Head from "next/head";
 export default function Privacidade() {
   return (
     <>
+      <Head>
+        <title>Política de Privacidade</title>
+        <link rel="icon" href="/rpg/boi.svg" />
+
+        <meta
+          name="description"
+          content="Essa é a nossa Política de Privacidade."
+        />
+
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="icon" href="/rpg/favicon/favicon.ico" />
+
+        <meta
+          property="og:image"
+          content="https://campanhasdoboi.com.br/rpg/face.jpg"
+        />
+        <meta name="keywords" content="RPG,Política de Privacidade, GURPS" />
+        <meta name="author" content="Boifubá" />
+      </Head>
       <div className="wrapper">
         <div className="title">/Privacidade</div>
         <h1>Política de Privacidade</h1>

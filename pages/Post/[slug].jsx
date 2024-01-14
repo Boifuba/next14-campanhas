@@ -12,6 +12,7 @@ import { useRouter } from "next/router";
 import TableOfContents from "../../src/components/TableOfContents";
 import PostsGroupedByMonth from "../../src/components/indiceData";
 import "./slug.css";
+import DisqusComments from "@/components/Disqus";
 
 dotenv.config();
 
@@ -79,14 +80,6 @@ const PostPage = ({ item, recentPosts }) => {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="robots" content="index,follow" />
         <meta name="author" content="Boifubá" />
-        <meta
-          name="keywords"
-          content={
-            item.metatags
-              ? item.metatags.join(",")
-              : "rpg de mesa, mesa de rpg, rpg, role playing game, rpg online, rpg de mesa online, rpg de mesa virtual"
-          }
-        />
         <meta property="og:title" content={item.title} />
         <meta property="og:description" content={item.smalltext} />
         <meta property="og:url" content={currentUrl} />
@@ -103,7 +96,6 @@ const PostPage = ({ item, recentPosts }) => {
           content={"https://campanhasdoboi.com.br/rpg/" + item.img}
         />
         <meta name="description" content={item.smalltext} />
-        {/* ...rest of your meta tags... */}
       </Head>
       ;
       <div className="entire">
@@ -136,6 +128,7 @@ const PostPage = ({ item, recentPosts }) => {
               </div>{" "}
             </div>
             <h1 className="post-title">{item.title}</h1>
+            <p className="post-smalltext">{item.smalltext}</p>
             <div className="post-text">{parse(item.text)}</div>{" "}
             <div className="post-title">Recomendados</div>
             <div className="recomendados-post">
@@ -158,6 +151,9 @@ const PostPage = ({ item, recentPosts }) => {
                 </Link>
               ))}
             </div>
+            <div style={{ width: "90%", margin: "auto" }}>
+              <DisqusComments post={item} />{" "}
+            </div>
           </div>
           <div className="aside">
             <h2>Índice</h2>
@@ -166,6 +162,7 @@ const PostPage = ({ item, recentPosts }) => {
             <hr className="shine" />
             <PostsGroupedByMonth />
             <hr />
+            <h2>Compartilhe</h2>
             <Share
               url={currentUrl}
               title={item.title}
@@ -184,6 +181,9 @@ const PostPage = ({ item, recentPosts }) => {
             </Link>
           </div>
         </div>
+      </div>
+      <div className="wrapper">
+        <DisqusComments post={item} />{" "}
       </div>
     </>
   );

@@ -49,7 +49,7 @@ export default function Contato() {
               </a>
 
               <a
-                href="https://discord.gg/gNwN3njt"
+                href="https://discord.com/invite/223PjGAM2Y"
                 target="_blank"
                 rel="noopener noreferrer"
               >

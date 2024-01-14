@@ -11,7 +11,7 @@ export default function Bot() {
           <div className="bot-title">Discord Bot para GURPS</div>
           <div className="columns-2">
             <div className="logo-column">
-              <a href="https://discord.gg/S7JKXDyY">
+              <a href="https://discord.com/invite/223PjGAM2Y">
                 <Image
                   className="logo"
                   src={"/rpg/logobranca.png"}

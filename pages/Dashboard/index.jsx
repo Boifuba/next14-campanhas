@@ -66,7 +66,7 @@ export default function Dashboard({ data }) {
         router.push("/");
       }
     });
-  }, [auth.currentUser]);
+  }, [router, posts]);
   //TERMINA AQUI VERIFICAR O ROUTE
   //TERMINA AQUI VERIFICAR O ROUTE
   //TERMINA AQUI VERIFICAR O ROUTE

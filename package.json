@@ -15,6 +15,7 @@
     "bcryptjs": "^2.4.3",
     "cookie": "^0.6.0",
     "date-fns": "^3.0.6",
+    "disqus-react": "^1.1.5",
     "dotenv": "^16.3.1",
     "firebase": "^10.7.1",
     "html-react-parser": "^5.0.11",

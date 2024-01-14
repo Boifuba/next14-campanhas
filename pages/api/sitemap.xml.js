@@ -11,10 +11,18 @@ const sitemapHandler = async (req, res) => {
     { url: "/rpg/Bot", changefreq: "monthly", priority: 0.8 },
     { url: "/rpg/Post/gerador_de_mapas", changefreq: "monthly", priority: 0.7 },
     {
+      url: "/rpg/Post/GURPS-gamming-ballitics-2024",
+      changefreq: "monthly",
+      priority: 0.9,
+    },
+
+    {
       url: "/rpg/Post/Regra_de_cavar_buraco",
       changefreq: "daily",
       priority: 0.9,
     },
+    { url: "/rpg/Post/FAQ", changefreq: "monthly", priority: 0.2 },
+    { url: "/rpg/Post/Privacidade", changefreq: "monthly", priority: 0.7 },
   ];
 
   // Create a stream to write to
